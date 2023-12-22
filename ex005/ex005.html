@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: rgb(6, 181, 187);
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>Dom</strong> em JS</p>
+
+    <div class="msg">Clique em mim</div>
+
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[1] //0, pois é o primeiro paragráfo; para selecionar o debaixo, basta colocar [1]
+        window.document.write('Está escrito assim: ' + p1.innerText)
+
+        //vc tb pode mudar a cor de um elemento sem alterar o css, mas colocar dentor do script o "p1.style.color ='blue'"; o mesmo para o corpo, bastando criar uma var corpo = window.document.body e corpo.style.background = 'Black'
+
+        document.write(p1.innerHTML) //para pegar a formatação completa do HTML, pois o innerText pega o HTML sem as filhas. 
+
+        /*var d = window.document.getElementById('msg')
+        d.style.background = 'green' -- criar um fundo verde na div mesmo sem CSS. Ou você pode simplesmente substituir a frase da div mesmo sem usar HTML, basta colocar: d.innerText = 'Estou aguardando...' Lembre-se: o window não é obrigatório. */
+
+        var d = window.document.querySelector('div.msg')
+        d.style.background = 'blue'
+    </script>
+    
+</body>
+</html>
